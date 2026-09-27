@@ -10,116 +10,89 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#2c070e">
 
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="locked">
+<body>
 
-  <!-- ============ OPENING GATE ============ -->
-  <button class="gate" id="gate" type="button" aria-label="Open the invitation">
-    <span class="gate-glow" aria-hidden="true"></span>
-
-    <span class="door door--left" aria-hidden="true">
-      <svg class="door-arch" viewBox="0 0 200 600" preserveAspectRatio="none">
-        <path d="M22 600 V210 C22 130 110 118 160 70 Q186 44 200 18" />
-        <path d="M40 600 V222 C40 150 118 140 166 96 Q188 74 200 52" class="thin" />
-      </svg>
-      <span class="door-ring"></span>
-    </span>
-    <span class="door door--right" aria-hidden="true">
-      <svg class="door-arch" viewBox="0 0 200 600" preserveAspectRatio="none">
-        <path d="M22 600 V210 C22 130 110 118 160 70 Q186 44 200 18" />
-        <path d="M40 600 V222 C40 150 118 140 166 96 Q188 74 200 52" class="thin" />
-      </svg>
-      <span class="door-ring"></span>
-    </span>
-
-    <span class="gate-content">
-      <span class="gate-bismillah" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
-      <span class="seal" aria-hidden="true">
-        <span class="seal-inner">
-          <span class="seal-a">A</span><span class="seal-amp">&amp;</span><span class="seal-s">S</span>
-        </span>
-      </span>
-      <span class="gate-names">Aziya &amp; Shifas</span>
-      <span class="gate-tap">Tap to open</span>
-    </span>
-  </button>
-
-  <div class="petals" id="petals" aria-hidden="true"></div>
-
-  <!-- ============ THE CARD ============ -->
   <main class="stage">
-    <div class="card" id="card" role="button" tabindex="0" aria-expanded="false" aria-label="Show invitation details">
-      <div class="card-rotator">
+    <div class="card" id="card" role="button" tabindex="0" aria-expanded="false" aria-label="Open the invitation">
 
-        <article class="face face--front">
-          <div class="stack">
-            <p class="label">Bismillah-ir-Rahman-ir-Raheem</p>
+      <div class="env-back" aria-hidden="true"></div>
 
-            <p class="dua" lang="ar">بَارَكَ اللَّهُ لَكُمَا</p>
+      <article class="letter" id="letter" inert>
+        <div class="stack">
+          <p class="label">Bismillah-ir-Rahman-ir-Raheem</p>
+          <p class="dua" lang="ar">بَارَكَ اللَّهُ لَكُمَا</p>
+          <p class="label">The Nikah of</p>
+          <h1 class="names">Aziya <span class="amp">&amp;</span> Shifas</h1>
+          <span class="divider" aria-hidden="true"></span>
 
-            <span class="divider" aria-hidden="true"></span>
-
-            <p class="label">The Nikah of</p>
-            <h1 class="names names--front">
-              <span>Aziya</span>
-              <span class="amp">&amp;</span>
-              <span>Shifas</span>
-            </h1>
-
-            <p class="front-date">7 October 2026</p>
-
-            <p class="label hint">Tap for details</p>
-          </div>
-        </article>
-
-        <article class="face face--back" inert>
-          <div class="stack">
-            <p class="label">You are warmly invited to the Nikah of</p>
-            <p class="names names--back">Aziya <span class="amp">&amp;</span> Shifas</p>
-            <p class="intro">We request the honour of your presence and du&rsquo;a on this blessed occasion.</p>
-
-            <div class="details">
-              <div class="row">
-                <p class="label">Date &amp; Time</p>
-                <p class="strong">Wednesday, 7 October 2026</p>
-                <p class="soft">11:30 AM</p>
-              </div>
-              <div class="row">
-                <p class="label">Venue</p>
-                <p class="strong">Nehru Memorial Town Hall</p>
-                <p class="soft">Mattancherry, Kochi</p>
-              </div>
-              <div class="row">
-                <p class="label">Counting down</p>
-                <div class="countdown" id="timer" role="timer" aria-live="off">
-                  <span><b id="cd-days">--</b>days</span>
-                  <span><b id="cd-hours">--</b>hrs</span>
-                  <span><b id="cd-mins">--</b>min</span>
-                </div>
-                <p class="strong" id="cdDone" hidden>Alhamdulillah, the day is here</p>
-              </div>
+          <div class="details">
+            <div class="row">
+              <p class="label">Date &amp; Time</p>
+              <p class="strong">Wednesday, 7 October 2026</p>
+              <p class="soft">11:30 AM</p>
             </div>
-
-            <div class="actions">
-              <a class="action" target="_blank" rel="noopener"
-                 href="https://www.google.com/maps/search/?api=1&query=Nehru%20Memorial%20Town%20Hall%2C%20Mattancherry%2C%20Kochi">
-                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Directions</span>
-              </a>
-              <a class="action" target="_blank" rel="noopener"
-                 href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nikah%20of%20Aziya%20%26%20Shifas&dates=20261007T060000Z/20261007T100000Z&details=Insha%20Allah%2C%20the%20Nikah%20of%20Aziya%20%26%20Shifas.&location=Nehru%20Memorial%20Town%20Hall%2C%20Mattancherry%2C%20Kochi">
-                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                <span>Add to Calendar</span>
-              </a>
+            <div class="row">
+              <p class="label">Venue</p>
+              <p class="strong">Nehru Memorial Town Hall</p>
+              <p class="soft">Mattancherry, Kochi</p>
+            </div>
+            <div class="row">
+              <p class="label">Counting down</p>
+              <div class="countdown" id="timer" role="timer" aria-live="off">
+                <span><b id="cd-days">--</b>days</span>
+                <span><b id="cd-hours">--</b>hrs</span>
+                <span><b id="cd-mins">--</b>min</span>
+              </div>
+              <p class="strong" id="cdDone" hidden>Alhamdulillah, the day is here</p>
             </div>
           </div>
-        </article>
 
+          <div class="actions">
+            <a class="action" target="_blank" rel="noopener"
+               href="https://www.google.com/maps/search/?api=1&query=Nehru%20Memorial%20Town%20Hall%2C%20Mattancherry%2C%20Kochi">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Directions</span>
+            </a>
+            <a class="action" target="_blank" rel="noopener"
+               href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Nikah%20of%20Aziya%20%26%20Shifas&dates=20261007T060000Z/20261007T100000Z&details=Insha%20Allah%2C%20the%20Nikah%20of%20Aziya%20%26%20Shifas.&location=Nehru%20Memorial%20Town%20Hall%2C%20Mattancherry%2C%20Kochi">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+              <span>Add to Calendar</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <div class="env-pocket" aria-hidden="true">
+        <div class="shape"></div>
+        <svg class="env-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M0 0 L50 50 L100 0" />
+          <path class="soft-line" d="M0 100 L50 62 L100 100" />
+        </svg>
       </div>
+
+      <div class="env-flap" aria-hidden="true">
+        <div class="flap-out"><div class="shape"></div></div>
+        <div class="flap-in"><div class="shape"></div></div>
+      </div>
+
+      <span class="seal" aria-hidden="true">
+        <span class="seal-inner"><span class="seal-a">A</span><span class="seal-amp">&amp;</span><span class="seal-s">S</span></span>
+      </span>
+
+      <div class="env-text" aria-hidden="true">
+        <p class="env-names">Aziya <span class="amp">&amp;</span> Shifas</p>
+        <p class="label">Tap to open</p>
+      </div>
+
     </div>
   </main>
 
