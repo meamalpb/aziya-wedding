@@ -210,9 +210,7 @@ a { color: inherit; }
   position: absolute;
   inset: 0;
   clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
-  background:
-    radial-gradient(circle at 1px 1px, rgba(201,162,74,.12) 1px, transparent 0) 0 0 / 18px 18px,
-    linear-gradient(180deg, var(--maroon-600) 0%, var(--maroon-700) 60%, var(--maroon-800) 100%);
+  background: linear-gradient(180deg, var(--maroon-600) 0%, var(--maroon-700) 60%, var(--maroon-800) 100%);
 }
 .env-lines {
   position: absolute;
@@ -252,15 +250,10 @@ a { color: inherit; }
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 .flap-out .shape {
-  background:
-    radial-gradient(circle at 1px 1px, rgba(201,162,74,.14) 1px, transparent 0) 0 0 / 18px 18px,
-    linear-gradient(180deg, #6a1627 0%, var(--maroon-600) 100%);
+  background: linear-gradient(180deg, #6a1627 0%, var(--maroon-600) 100%);
 }
 .flap-in .shape {
-  background:
-    radial-gradient(circle, var(--gold) 1.2px, transparent 1.6px) 0 0 / 14px 14px,
-    radial-gradient(circle, rgba(201,162,74,.5) 1px, transparent 1.4px) 7px 7px / 14px 14px,
-    #f3e7cc;
+  background: #f3e7cc;
 }
 
 /* wax seal where the flap meets the pocket */
